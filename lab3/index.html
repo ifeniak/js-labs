@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Farm</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <div class="header">
+        <div class="header__name">Farms</div>
+        <div class="find">
+          <input class="input" id="input" type="text" placeholder="Enter your farm" />
+          <button class="find__button" id="find__button" type="button">find</button>
+          <button class="clear find__button" id="clear__find__button" type="button">clear</button>
+        </div>
+      </div>
+    </header>
+  </div>
+
+  <div class="content">
+    <aside class="aside">
+      <h2>Manage farms</h2>
+      <div class="sort">
+        Sorting by power.
+        <input type="checkbox" id="sort__checkbox">
+        </label>
+      </div>
+
+      <hr>
+
+      <div class="count">
+        <div>Total power of all your farms</div>
+        <button class="count__button" id="count__button" type="button">Count</button>
+        <div>
+          Total power: <span id="total-power">0</span> sigils.
+        </div>
+      </div>
+    </aside>
+
+    <div class="vertical__divider"></div>
+
+    <div>
+      <ul id="container__items"></ul>
+    </div>
+  </div>
+
+  <script type="module" src="./js/index.js"></script>
+</body>
+
+</html>
