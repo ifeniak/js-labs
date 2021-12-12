@@ -1,0 +1,92 @@
+body {
+    width: 100%;
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 400;
+}
+
+.container {
+    margin: 0 auto;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    background-color: #d7df94e7;
+    padding: 1rem;
+}
+
+.header__name {
+    font-size: large;
+    font-weight: 900;
+}
+
+.vertical__divider {
+    margin: 2rem;
+    border-left: 3px solid #BaBABA;
+    min-height: 400px;
+}
+
+ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+ul li {
+    margin: 2rem;
+    padding: 1rem;
+    border-radius: 6px;
+    border: 4px solid #BBBB;
+}
+
+.item-card {
+    max-width: 620px;
+}
+
+.item-container__image {
+    min-height: 300px;
+    max-width: 420px;
+    cursor: pointer;
+}
+
+.input {
+    border-radius: 6px;
+    padding: 12px;
+    width: 15rem;
+}
+
+.find__button {
+    background-color: transparent;
+    border-radius: 9px;
+    border: 1px solid #2589e0;
+    color: rgba(174, 0, 255, 0.808);
+    width: 3rem;
+    height: 3.5rem;
+    margin: 0 1rem;
+}
+
+.find__button.clear {
+    color: red;
+    border-color: #e7312a;
+}
+
+.content {
+    display: flex;
+    flex-direction: row;
+}
+
+.aside {
+    min-width: 13rem;
+    padding: 1rem;
+}
+
+.content h2 {
+    font-weight: 500;
+}
+
+.content .count > * {
+    margin-bottom: 2rem;
+}
