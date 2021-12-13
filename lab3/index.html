@@ -26,6 +26,32 @@
 
   <div class="content">
     <aside class="aside">
+
+      <form id="add_form">
+        <h2>Create farm</h2>
+
+        <div class="item_form">
+            <label for="location_input" class="form_label">Location</label>
+            <input type="text" class="form_control" id="location_input" required>
+        </div>
+        <div class="item_form">
+            <label for="name_input" class="form_label">Name</label>
+            <input type="text" class="form_control" id="name_input" required>
+        </div>
+        <div class="item_form">
+            <label for="animals_input" class="form_label">Animals</label>
+            <input type="number" class="form_control" id="animals_input">
+        </div>
+        <div class="item_form">
+            <label for="power_input" class="form_label">Power</label>
+            <input type="number" class="form_control" id="power_input">
+        </div>
+        <button id="submit_button" type="submit" class="btn btn-primary">
+            Submit
+        </button>
+    </form>
+
+
       <h2>Manage farms</h2>
       <div class="sort">
         Sorting by power.

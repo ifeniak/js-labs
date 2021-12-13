@@ -14,3 +14,15 @@ const FARMS = [
 export const getAllFarms = () => {
     return FARMS;
 };
+
+export const postFarms = (body) => {
+    FARMS.push(body);
+}
+
+export const updateFarms = (id, body) => {
+    let index = FARMS.findIndex(idx => idx.id == id);
+    FARMS[index].location = body.location;
+    FARMS[index].name = body.name;
+    FARMS[index].animals = body.animals;
+    FARMS[index].power = body.power;
+}
