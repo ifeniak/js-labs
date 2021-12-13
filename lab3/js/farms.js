@@ -15,11 +15,11 @@ export const getAllFarms = () => {
     return FARMS;
 };
 
-export const postFarms = (body) => {
+export const postFarm = (body) => {
     FARMS.push(body);
 }
 
-export const updateFarms = (id, body) => {
+export const updateFarm = (id, body) => {
     let index = FARMS.findIndex(idx => idx.id == id);
     FARMS[index].location = body.location;
     FARMS[index].name = body.name;

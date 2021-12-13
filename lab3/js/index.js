@@ -7,13 +7,18 @@ import {
 } from "./dom_util.js";
 
 import { 
-    getAllFarms, 
-    postFarm, 
-    updateFarm,
-    deleteFarm,
+    //getAllFarms, 
+    // postFarm, 
+    // updateFarm,
+    // deleteFarm,
 } from "./api.js";
 
-// import { getAllFarms } from "./farms.js";
+import { 
+    getAllFarms,
+    postFarm,
+    updateFarm
+
+ } from "./farms.js";
 
 
 const formField = document.getElementById("item_form");
@@ -27,22 +32,26 @@ const countButton = document.getElementById("count__button");
 
 let farms = [];
 
-const onEditItem = async (element) => {
-    const itemId = element.target.id.replace(EDIT_BUTTON_PREFIX, "");
+// const onEditItem = async (element) => {
+//     if (!validateInput()) {
+//         return;
+//     };
 
-    await updateFarm(itemId, getInputValues())
-    clearInputs();
+//     const itemId = element.target.id.replace(EDIT_BUTTON_PREFIX, "");
 
-    refetchAllFarms();
-};
+//     await updateFarm(itemId, getInputValues())
+//     clearInputs();
 
-const onRemoveItem = async (element) => {
-    const itemId = element.target.id.replace(DELETE_BUTTON_PREFIX, "");
+//     refetchAllFarms();
+// };
 
-    await deleteFarm(itemId);
+// const onRemoveItem = async (element) => {
+//     const itemId = element.target.id.replace(DELETE_BUTTON_PREFIX, "");
 
-    refetchAllFarms(); 
-} 
+//     await deleteFarm(itemId);
+
+//     refetchAllFarms(); 
+// } 
 
 
 export const refetchAllFarms = async () => {
@@ -50,11 +59,23 @@ export const refetchAllFarms = async () => {
 
     farms = allFarms.sort((a, b) => b.name.localeCompare(a.name));
 
-    renderItemsList(farms, onEditItem, onRemoveItem);
+    // renderItemsList(farms, onEditItem, onRemoveItem);
+    renderItemsList(farms);
+};
+
+const validateInput = () => {
+    if (Array.from(formField).filter(e => e.value.trim() == "").length != 0) {
+        alert("Please input data");
+        return false;
+    }
+    return true;
 };
 
 submitButton.addEventListener("click", (event) => {
     event.preventDefault();
+    // if (!validateInput()) {
+    //     return;
+    // };
 
     const { location, name, animals, power } = getInputValues();
 
@@ -65,18 +86,21 @@ submitButton.addEventListener("click", (event) => {
         name, 
         animals,
         power,
-    }).then(refetchAllFarms);
+    });
+
+    refetchAllFarms();
 
 });
 
 findButton.addEventListener("click", () => {
     const foundFarms = farms.filter((farm) => farm.name.search(input.value) !== -1);
 
-    renderItemsList(foundFarms, onEditItem, onRemoveItem);
+    // renderItemsList(foundFarms, onEditItem, onRemoveItem);
+    renderItemsList(foundFarms);
 });
 
 clearfindButton.addEventListener('click', () => {
-    renderItemsList(farms);
+    renderItemsList(farms/*, onEditItem, onRemoveItem*/);
 
     input.value = "";
 });
@@ -86,7 +110,7 @@ sortCheckbox.addEventListener("change", function() {
         const sortedFarms = farms.sort(
             (a, b) => parseInt(a.power) - parseInt(b.power));
         
-        renderItemsList(sortedFarms, onEditItem, onRemoveItem);
+        renderItemsList(sortedFarms/*, onEditItem, onRemoveItem*/);
     } else {
         refetchAllFarms();
     }
