@@ -22,8 +22,12 @@ import {
 
 
 const formField = document.getElementById("item_form");
-const submitButton = document.getElementById("submit_button");
+const locationInput = document.getElementById("location_input");
+const nameInput = document.getElementById("name_input");
+const animalsInput = document.getElementById("animals_input");
+const powerInput = document.getElementById("power_input");
 
+const submitButton = document.getElementById("submit_button");
 const findButton = document.getElementById("find__button");
 const clearfindButton = document.getElementById("clear__find__button");
 const input = document.getElementById("input");
@@ -64,18 +68,22 @@ export const refetchAllFarms = async () => {
 };
 
 const validateInput = () => {
-    if (Array.from(formField).filter(e => e.value.trim() == "").length != 0) {
-        alert("Please input data");
-        return false;
+    var a = locationInput.value;
+    var b = nameInput.value;
+    var c = animalsInput.value;
+    var d = powerInput.value;
+    if (a == null || a == "" || b == null || b == ""|| c == null || c == "" || d == null || d == "") {
+      alert("Please Fill All Required Field");
+      return false;
     }
     return true;
 };
 
 submitButton.addEventListener("click", (event) => {
     event.preventDefault();
-    // if (!validateInput()) {
-    //     return;
-    // };
+    if (!validateInput()) {
+        return;
+    };
 
     const { location, name, animals, power } = getInputValues();
 
