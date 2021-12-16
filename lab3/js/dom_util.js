@@ -21,10 +21,10 @@ const itemTemplate = ({id, name, location, animals, power}) => `
         <p>Animals: ${animals} heads</p>
         <p>Power: ${power} sigils</p>
     </div>
-     <div>
-         <button id="${EDIT_BUTTON_PREFIX}${id}" type="button" class="default_button">Edit</button>
-         <button id="${DELETE_BUTTON_PREFIX}${id}" type="button" class="default_button">Delete</button>
-     </div>
+    <div>
+        <button id="${EDIT_BUTTON_PREFIX}${id}" type="button" class="default_button">Edit</button>
+        <button id="${DELETE_BUTTON_PREFIX}${id}" type="button" class="default_button">Delete</button>
+    </div>
 </li>`;
 
 export const clearInputs = () => {
@@ -34,24 +34,24 @@ export const clearInputs = () => {
     powerInput.value = "";
 };
 
-export const addItemToPage = ({id, location, name, animals, power} /*, onEditItem*/) => {
+export const addItemToPage = ({id, location, name, animals, power}, onEditItem, onRemoveItem) => {
     itemsContainer.insertAdjacentHTML(
         "afterbegin", 
         itemTemplate({id, location, name, animals, power})
     );
 
-    // const editButton = document.getElementById(`${EDIT_BUTTON_PREFIX}${id}`);
-    // const removeButton = document.getElementById(`${DELETE_BUTTON_PREFIX}${id}`);
+    const editButton = document.getElementById(`${EDIT_BUTTON_PREFIX}${id}`);
+    const removeButton = document.getElementById(`${DELETE_BUTTON_PREFIX}${id}`);
 
-    // editButton.addEventListener("click", onEditItem);
-    // removeButton.addEventListener("click", onRemoveItem);
+    editButton.addEventListener("click", onEditItem);
+    removeButton.addEventListener("click", onRemoveItem);
 };
 
-export const renderItemsList = (items, onRemoveItem) => {
+export const renderItemsList = (items, onEditItem, onRemoveItem) => {
     itemsContainer.innerHTML = "";
 
     for (const item of items) {
-        addItemToPage(item/*, onEditItem, onRemoveItem*/);
+        addItemToPage(item, onEditItem, onRemoveItem);
     }
 };
 
