@@ -10,7 +10,7 @@ import {
     getAllFarms, 
     postFarm, 
     updateFarm,
-    deleteFarm,
+    deleteFarm
 } from "./api.js";
 
 import { 
@@ -18,7 +18,7 @@ import {
     // postFarm,
     // updateFarm
 
- } from "./farms.js";
+} from "./farms.js";
 
 
 const formField = document.getElementById("item_form");
@@ -36,12 +36,14 @@ const countButton = document.getElementById("count__button");
 
 let farms = [];
 
-const onEditItem = async (element) => {
+const onEditItem = async (e) => {
     // if (!validateInput()) {
     //     return;
     // };
 
-    const itemId = element.target.id.replace(EDIT_BUTTON_PREFIX, "");
+    const itemId = e.target.id.replace(EDIT_BUTTON_PREFIX, "");
+    // console.log(e.target);
+    // console.log(itemId);
 
     await updateFarm(itemId, getInputValues())
     clearInputs();
@@ -49,10 +51,12 @@ const onEditItem = async (element) => {
     refetchAllFarms();
 };
 
-const onRemoveItem = async (element) => {
-    const itemId = element.target.id.replace(DELETE_BUTTON_PREFIX, "");
+const onRemoveItem = async (e) => {
+    const itemId = e.target.id.replace(DELETE_BUTTON_PREFIX, "");
+    console.log("hello");
 
     await deleteFarm(itemId);
+    console.log("hello fuck");
 
     refetchAllFarms(); 
 } 
@@ -125,7 +129,7 @@ sortCheckbox.addEventListener("change", function() {
 countButton.addEventListener("click", () => {
     let sum = farms.map(o => o.power).reduce((a, c) => { return a + c });
     document.getElementById("total-power").innerText = sum;
-    console.log(sum);
+    // console.log(sum);
 });
 
 refetchAllFarms();

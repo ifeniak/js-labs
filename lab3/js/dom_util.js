@@ -8,10 +8,10 @@ const powerInput = document.getElementById("power_input");
 
 const itemsContainer = document.getElementById("container__items");
 
-const getItemId = (id) => `item-${id}`
+// const getItemId = (id) => `item-${id}`
 
 const itemTemplate = ({id, name, location, animals, power}) => `
-<li id="${getItemId(id)}" class="item-card">
+<li id="${id}" class="item-card draggable="true">
     <img 
         src = "https://media.istockphoto.com/photos/fjordview-in-norway-encapsulated-by-mountains-picture-id1278122924"
         class="item-container__image" alt="card">
@@ -41,16 +41,17 @@ export const addItemToPage = ({id, location, name, animals, power}, onEditItem, 
     );
 
     const editButton = document.getElementById(`${EDIT_BUTTON_PREFIX}${id}`);
-    const removeButton = document.getElementById(`${DELETE_BUTTON_PREFIX}${id}`);
+    const deleteButton = document.getElementById(`${DELETE_BUTTON_PREFIX}${id}`);
 
     editButton.addEventListener("click", onEditItem);
-    removeButton.addEventListener("click", onRemoveItem);
+    deleteButton.addEventListener("click", onRemoveItem);
 };
 
 export const renderItemsList = (items, onEditItem, onRemoveItem) => {
     itemsContainer.innerHTML = "";
 
     for (const item of items) {
+        // console.log(item)
         addItemToPage(item, onEditItem, onRemoveItem);
     }
 };
