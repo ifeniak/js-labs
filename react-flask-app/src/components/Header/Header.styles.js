@@ -20,17 +20,38 @@ export const Wrapper = styled.div`
 export const Logo = styled.a`
     color: black;
     text-decoration: none;
+    padding-left: 50px;
 `
 
 export const Nav = styled.ul`
     display: flex;
     list-style: none;
+    justify-content: center;
+    padding: 0;
+    text-align: center;
+    flex: 5;
 `
 export const NavItem = styled.li`
-    margin: 10px 30px;  
+    margin: 10px 30px; 
+    text-align: center; 
 `
 
 export const Links = styled.ul`
     display: flex;
     list-style: none;
+    justify-content: center;
+    padding: 0;
+`
+export const NavWrapper = styled.div`
+    width: 200px;
+    flex: 1;
+`
+
+export const Search = styled.input`
+    border-color: #c4c4c4;
+    border-style: solid;
+    border-radius: 10px;
+    color: #c4c4c4;
+    padding: 8px 8px;
+    margin: 0;
 `

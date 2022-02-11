@@ -9,7 +9,7 @@ export const VoucherItems = () => {
     return (
         <div>
             <Wrapper>
-                <Image src={GoldCreekPond}></Image>
+                <Image src={GoldCreekPond}/>
                 <TextWrapper>
                     <Label>Gold Creek Pond</Label>
                     <Text>USA</Text>
