@@ -1,13 +1,24 @@
-import { HeroWrapper, Image, ImageText, ItemLabel, ItemList, Label, TextWrapper, Button, InformWrapper, Inform, InformLabel, AllInform, InformText } from "./Home.styles";
+import { 
+    HeroWrapper, 
+    Image, 
+    ImageText, 
+    ItemLabel, 
+    ItemList, 
+    Label, 
+    TextWrapper, 
+    Button, 
+    InformWrapper, 
+    Inform, InformLabel, AllInform, InformText 
+} from "./Home.styles";
 import Hero from "../../icons/hero.jpg";
 import GoldCreekPond from "../../icons/GoldCreekPond.jpg";
 import AppenzellDistrict from "../../icons/AppenzellDistrict.jpg";
 import Uttarakhand from "../../icons/Uttarakhand.jpg";
 import { VoucherItems } from "../VoucherItems/VoucherItems";
-import { useState } from "react";
+import { useState } from 'react';
 import { HomeItem } from "../HomeItem/HomeItem";
 
-export const Home = () => {
+export function Home() {
     const [viewMoreVouchers, toggle] = useState(false);
     const [vouchers, showAllVouchers] = useState([
         {

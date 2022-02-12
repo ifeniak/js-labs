@@ -8,7 +8,7 @@ export function CatalogItem(props) {
                 <Label>{props.name}</Label>
                 <SmallText>Price: {props.price}$</SmallText>
             </TextWrapper>
-            <Button>View more</Button>
+            <Button onClick={() => props.function(props)}>View more</Button>
         </Wrapper>
     );
 }

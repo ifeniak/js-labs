@@ -1,4 +1,4 @@
-import { StyleHeader, Wrapper, Nav, NavItem, Logo, Links, Search, NavWrapper } from "./Header.styles";
+import { Wrapper, Nav, NavItem, Logo, Links, NavWrapper } from "./Header.styles";
 import {
     InstagramOutlined,
     YoutubeOutlined,
@@ -6,7 +6,7 @@ import {
 } from "@ant-design/icons";
 import { Link } from "react-router-dom";
 
-export const Header = () => {
+export function Header() {
     return (
         <Wrapper>
             <Logo>Voucher</Logo>

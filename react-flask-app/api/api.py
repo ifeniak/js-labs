@@ -1,23 +1,14 @@
-# # import time
-# # from flask import Flask
-
-# # app = Flask(__name__)
-
-# # @app.route('/time')
-# # def get_current_time():
-# #     return {'time': time.time()}
-
 # from flask import Flask, request, jsonify, abort, render_template
 # from flask_cors import CORS, cross_origin
 # from flask_sqlalchemy import SQLAlchemy
 # from flask_marshmallow import Marshmallow
 # from marshmallow import fields, validate, exceptions
 # import os
-# #from dotenv import load_dotenv
+# from dotenv import load_dotenv
 # import json
 # import copy
 
-# #load_dotenv()
+# load_dotenv()
 
 # app = Flask(__name__)
 
@@ -29,17 +20,17 @@
 # app.config['CORS_HEADERS'] = 'Content-Type'
 # CORS(app, resources={r"/farms": {"origins": "http://127.0.0.1:5000/"}})
 
-# # @app.route('/')
-# # def hello_world():  # put application's code here
-# #     return render_template('index.html')
+# @app.route('/')
+# def hello_world():  # put application's code here
+#     return render_template('index.html')
 
-# # app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://{user}:{password}@{host}:{port}/{database}'.format(
-# #     user=str(os.getenv('user')),
-# #     password=str(os.getenv('password')),
-# #     host=str(os.getenv('host')),
-# #     port=str(os.getenv('port')),
-# #     database=str(os.getenv('database'))
-# # )
+# app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://{user}:{password}@{host}:{port}/{database}'.format(
+#     user=str(os.getenv('user')),
+#     password=str(os.getenv('password')),
+#     host=str(os.getenv('host')),
+#     port=str(os.getenv('port')),
+#     database=str(os.getenv('database'))
+# )
 
 # db = SQLAlchemy(app)
 # ma = Marshmallow(app)
@@ -122,11 +113,11 @@
 #     fields = farm_schema.load(request.json)
 #     farm.update(**fields)
 
-#     # old_farm = copy.deepcopy(farm)
-#     # farm.name = request.json['name']
-#     # farm.location = request.json['location']
-#     # farm.animals = request.json['animals']
-#     # farm.power = request.json['power']
+#     old_farm = copy.deepcopy(farm)
+#     farm.name = request.json['name']
+#     farm.location = request.json['location']
+#     farm.animals = request.json['animals']
+#     farm.power = request.json['power']
 #     db.session.commit()
 #     return farm_schema.jsonify(farm)
 
@@ -146,5 +137,5 @@
 #     app.run(debug=True)
 
 
-# # if __name__ == '__main__':
-# #     app.run(debug=True)
+# if __name__ == '__main__':
+#     app.run(debug=True)

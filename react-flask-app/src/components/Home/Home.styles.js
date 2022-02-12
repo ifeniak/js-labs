@@ -73,4 +73,3 @@ export const InformLabel = styled.h3`
 export const InformText = styled.a`
     font-weight: 400;
 `
-

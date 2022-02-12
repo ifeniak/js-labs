@@ -4,7 +4,7 @@ import {
     Wrapper
 } from "./HomeItem.styles";
 
-export const HomeItem = ({name, image}) => {
+export function HomeItem({name, image}) {
     return (
         <Wrapper>
             <Image src={image}/>
