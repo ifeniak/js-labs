@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const Wrapper = styled.div`
     display: flex;
@@ -27,9 +27,9 @@ export const Image = styled.img`
 export const Label = styled.h2`
     margin: 10px;
 `
-
-export const Text = styled.h3`
+export const SmallText = styled.h3`
     font-weight: 400;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
     align-self: center;
 `
 

@@ -1,20 +1,21 @@
-React.js: Home page
-Description: Start creating your React App with a simple Home page (see
+React.js: Connecting to REST API
+Description: Finally! Now, you are about to put a final touches on all pages
 
-the link to wireframe above). Your e-commerce app subject is about your entities from previous (3-5) works.
+you created - implement interaction with your REST API server.
 Variants - (products that you are ‘selling’) the same as for previous works.
 
-(see the description to 3rd work)
+(see the description to 3rd work) Backend - just as discussed before, can be the one you used for your 3-5 work or a new one created from scratch. Tech stack - absolutely up to you.
 Requirements:
 
-    You have to use only React.js library for all of your mark-up. Which means - your index.html file shouldn’t be touched.
-    Use create-react-app tool for creating base of your project https://github.com/facebook/create-react-app
-    Your Home page should follow the wireframe, i.e all of the elements ( header, navigation, footer etc. ) from wireframes must be presented on your website.
-    Design: You have to use CSS styling or/and component libraries. Don't overthink it, use your imagination for UI, BUT the work with almost no styling is unacceptable.
-    Functionality: For this work nothing but view only part is required. Any interaction (links/buttons) is not necessary, but you will have to complete them in your next labs.
+    All of the requirements for previous React.js works should be kept.
 
 Code style:
 
-    Project structure: Your UI elements should be logically separated into React components (one file for each component)
-    at least 5 component files are required. In other words, you can’t just put all your JSX into 1-2 files.
-    Use Functional components instead of Class components
+    For any http request - use axios library https://github.com/axios/axios#installing
+    All your API functions should be separated into single file (or folder, if you want) - just like you saw in Live coding for 5 lab with fetch() function
+
+Functionality:
+
+    On Catalog Page - all items should now be fetched from your backend with GET method (using axios)
+    Search with filters - should also be implemented with GET request (search by text field can be left as it is) Hint: pass filters as url parameter
+    Before response from your GET method is received you have to display a Spinner(Loader component) to the user. Something like this: https://projects.lukehaas.me/css-loaders/

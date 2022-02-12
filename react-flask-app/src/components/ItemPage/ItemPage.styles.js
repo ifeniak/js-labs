@@ -1,42 +1,48 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const Wrapper = styled.div`
     display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: 30px 200px;
+    padding: 100px 200px;
 `
+
 export const Image = styled.img`
-    width: 600px;
-    height: 500px;
-    border-radius: 25px;
+    width: 500px;
+    height: 400px;
+    border-radius: 15px;
 `
 
 export const TextWrapper = styled.div`
     display: flex;
     flex-direction: column;
-    padding: 40px 100px;
+    padding: 0px 30px;
 `
-export const Label = styled.h3`
-    font-weight: 400;
-    font-size: 54px;
-    margin-bottom: 0;
+
+export const Label = styled.h2`
+    font-weight: 500;
+    font-size: 68px;
+    margin: 0;
 `
+
 export const Text = styled.h4`
     font-weight: 300;
-    font-size: 26px;
+    font-size: 32px;
 `
+
+export const Price = styled.h4`
+    font-weight: 400;
+    font-size: 32px;
+    align-self: end;
+`
+
 export const Button = styled.button`
     margin-top: 30px;
     padding: 18px 32px;
-    position: absolute;
-    left: 50%;
     background-color: #f3f3f3;
     border: none;
     border-radius: 10px;
-    transform: translate(-50%, 0);
+    width: 50%;
+    align-self: center;
     &:hover {
         box-shadow: 0 0 8px #777676;
     }
 `
-

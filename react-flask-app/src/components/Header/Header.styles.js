@@ -17,6 +17,7 @@ export const Wrapper = styled.div`
     width: 100%;
 `
 
+
 export const Logo = styled.a`
     color: black;
     text-decoration: none;

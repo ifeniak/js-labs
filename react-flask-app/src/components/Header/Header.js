@@ -5,11 +5,9 @@ import {
     FacebookOutlined,
 } from "@ant-design/icons";
 import { Link } from "react-router-dom";
-import SearchIcon from "../../icons/search.png";
 
-export const Header = (props) => {
+export const Header = () => {
     return (
-        <StyleHeader>
         <Wrapper>
             <Logo>Voucher</Logo>
             <Nav>
@@ -18,23 +16,12 @@ export const Header = (props) => {
                 <Link to="/cart" style={{textDecoration: 'none', color: 'black'}}><NavItem>Cart</NavItem></Link>
             </Nav>
             <NavWrapper>
-                {check(props.isHomePage)}
+                <Links>
+                    <InstagramOutlined style={{margin: '10px'}}/>
+                    <YoutubeOutlined style={{margin: '10px'}}/>
+                    <FacebookOutlined style={{margin: '10px'}}/>
+                </Links>
             </NavWrapper>
         </Wrapper>
-    </StyleHeader>
     );
 };
-
-const check = (isHomePage) => {
-    if (isHomePage) {
-        return <Links>
-            <InstagramOutlined style={{margin: '10px'}}/>
-            <YoutubeOutlined style={{margin: '10px'}}/>
-            <FacebookOutlined style={{margin: '10px'}}/>
-        </Links>
-    }
-    return <div style={{display: 'flex', alignItems: 'center'}}>
-        <Search id={"search_button"}/>
-        <img src={SearchIcon} alt={"search"} style={{width: '20px', height: '20px', padding:'5px'}}/>
-    </div>
-}

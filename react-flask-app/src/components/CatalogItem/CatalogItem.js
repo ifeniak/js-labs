@@ -1,21 +1,12 @@
-import {
-    Wrapper,
-    TextWrapper,
-    Image,
-    Label,
-    Text,
-    Button,
+import {Image, Wrapper, Label, SmallText, TextWrapper, Button} from './CatalogItem.styles'
 
-} from "./CatalogItem.styles";
-
-export const CatalogItem = (props) => {
+export function CatalogItem(props) {
     return (
         <Wrapper>
-            <Image src={props.image}></Image>
+            <Image src={props.image}/>
             <TextWrapper>
                 <Label>{props.name}</Label>
-                <Text>{props.country}</Text>
-                <Text>Price: {props.price}$</Text>
+                <SmallText>Price: {props.price}$</SmallText>
             </TextWrapper>
             <Button>View more</Button>
         </Wrapper>
